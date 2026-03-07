@@ -410,16 +410,14 @@ export function AdminSettingsContent({ stats, shopName, shopDescription, shopLog
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="grid gap-2 md:max-w-xl">
-                        <div className="flex gap-2">
-                            <div className="floating-field flex-1 min-w-0">
-                                <Input
-                                    id="shop-name"
-                                    value={shopNameValue}
-                                    onChange={(e) => setShopNameValue(e.target.value)}
-                                    placeholder=" "
-                                />
-                                <Label htmlFor="shop-name" className="floating-label">{t('admin.settings.shopName')}</Label>
-                            </div>
+                        <Label htmlFor="shop-name">{t('admin.settings.shopName')}</Label>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                            <Input
+                                id="shop-name"
+                                value={shopNameValue}
+                                onChange={(e) => setShopNameValue(e.target.value)}
+                                className="flex-1"
+                            />
                             <Button onClick={handleSaveShopName} disabled={savingShopName}>
                                 {savingShopName ? t('common.processing') : t('common.save')}
                             </Button>
@@ -427,32 +425,28 @@ export function AdminSettingsContent({ stats, shopName, shopDescription, shopLog
                         <p className="text-xs text-muted-foreground">{t('admin.settings.shopNameHint')}</p>
                     </div>
                     <div className="grid gap-2 md:max-w-xl">
-                        <div className="flex gap-2">
-                            <div className="floating-field flex-1 min-w-0">
-                                <Input
-                                    id="shop-desc"
-                                    value={shopDescValue}
-                                    onChange={(e) => setShopDescValue(e.target.value)}
-                                    placeholder=" "
-                                />
-                                <Label htmlFor="shop-desc" className="floating-label">{t('admin.settings.shopDescription')}</Label>
-                            </div>
+                        <Label htmlFor="shop-desc">{t('admin.settings.shopDescription')}</Label>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                            <Input
+                                id="shop-desc"
+                                value={shopDescValue}
+                                onChange={(e) => setShopDescValue(e.target.value)}
+                                className="flex-1"
+                            />
                             <Button variant="outline" onClick={handleSaveShopDesc} disabled={savingShopDesc}>
                                 {savingShopDesc ? t('common.processing') : t('common.save')}
                             </Button>
                         </div>
                     </div>
                     <div className="grid gap-2 md:max-w-xl">
-                        <div className="flex gap-2">
-                            <div className="floating-field flex-1 min-w-0">
-                                <Input
-                                    id="shop-logo"
-                                    value={shopLogoInputValue}
-                                    onChange={(e) => setShopLogoValue(e.target.value)}
-                                    placeholder=" "
-                                />
-                                <Label htmlFor="shop-logo" className="floating-label">{t('admin.settings.shopLogo')}</Label>
-                            </div>
+                        <Label htmlFor="shop-logo">{t('admin.settings.shopLogo')}</Label>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                            <Input
+                                id="shop-logo"
+                                value={shopLogoInputValue}
+                                onChange={(e) => setShopLogoValue(e.target.value)}
+                                className="flex-1"
+                            />
                             <Button variant="outline" onClick={handleSaveShopLogo} disabled={savingShopLogo}>
                                 {savingShopLogo ? t('common.processing') : t('common.save')}
                             </Button>
@@ -491,17 +485,15 @@ export function AdminSettingsContent({ stats, shopName, shopDescription, shopLog
                         )}
                     </div>
                     <div className="grid gap-2 md:max-w-xs">
-                        <div className="flex gap-2">
-                            <div className="floating-field flex-1 min-w-0">
-                                <Input
-                                    id="low-stock"
-                                    type="number"
-                                    value={thresholdValue}
-                                    onChange={(e) => setThresholdValue(e.target.value)}
-                                    placeholder=" "
-                                />
-                                <Label htmlFor="low-stock" className="floating-label">{t('admin.settings.lowStockThreshold')}</Label>
-                            </div>
+                        <Label htmlFor="low-stock">{t('admin.settings.lowStockThreshold')}</Label>
+                        <div className="flex flex-col gap-2 sm:flex-row">
+                            <Input
+                                id="low-stock"
+                                type="number"
+                                value={thresholdValue}
+                                onChange={(e) => setThresholdValue(e.target.value)}
+                                className="flex-1"
+                            />
                             <Button variant="outline" onClick={handleSaveThreshold} disabled={savingThreshold}>
                                 {savingThreshold ? t('common.processing') : t('common.save')}
                             </Button>
